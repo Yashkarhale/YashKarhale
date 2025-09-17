@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Greenovate - Eco-smart solutions, sustainability projects, and green innovations for a better planet." />
+  <meta name="keywords" content="Eco-friendly, Sustainability, Green Innovations, Eco-smart Solutions, Greenovate" />
+  <meta name="author" content="Greenovate" />
+  <title>Greenovate | Eco-smart Solutions & Sustainability</title>
+  <style>
+    /* Reset and base */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      background-color: #f5fdf7;
+      color: #2a4d14;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    a {
+      color: #3a7d44;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    header {
+      background-color: #3a7d44;
+      color: #e6f2d9;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    header h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+    nav ul li {
+      font-weight: 600;
+    }
+    nav ul li a {
+      color: #e6f2d9;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+    nav ul li a:hover,
+    nav ul li a:focus {
+      color: #d0e8a6;
+      outline: none;
+    }
+    main {
+      flex-grow: 1;
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      width: 100%;
+    }
+    /* Hero Section */
+    .hero {
+      background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+      border-radius: 12px;
+      color: #e6f2d9;
+      padding: 4rem 2rem;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      position: relative;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(58,125,68,0.65);
+      border-radius: 12px;
+      z-index: 0;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .hero h2 {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+    .hero p {
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+      font-weight: 500;
+    }
+    .btn-primary {
+      background-color: #a3c86d;
+      color: #2a4d14;
+      padding: 0.75rem 2rem;
+      font-size: 1.1rem;
+      font-weight: 700;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-primary:hover,
+    .btn-primary:focus {
+      background-color: #8bb04a;
+      outline: none;
+    }
+    /* Section Titles */
+    section h3 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      text-align: center;
+      color: #3a7d44;
+      font-weight: 700;
+    }
+    /* About Us */
+    #about {
+      background-color: #e6f2d9;
+      border-radius: 12px;
+      padding: 2rem 1.5rem;
+      margin: 3rem 0;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0 4px 12px rgba(58,125,68,0.15);
+    }
+    #about p {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.6;
+      color: #2a4d14;
+    }
+    /* Services */
+    #services {
+      margin: 3rem 0;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+      gap: 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .service-card {
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(58,125,68,0.1);
+      padding: 1.5rem;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+    .service-card:hover,
+    .service-card:focus-within {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 20px rgba(58,125,68,0.2);
+      outline: none;
+    }
+    .service-card img {
+      max-width: 100%;
+      height: 160px;
+      object-fit: contain;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+    }
+    .service-card h4 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+      color: #3a7d44;
+      font-weight: 700;
+    }
+    .service-card p {
+      font-size: 1rem;
+      color: #4a6b2f;
+      line-height: 1.4;
+    }
+    /* Contact */
+    #contact {
+      background-color: #e6f2d9;
+      border-radius: 12px;
+      padding: 2rem 1.5rem;
+      max-width: 600px;
+      margin: 3rem auto 4rem;
+      box-shadow: 0 4px 12px rgba(58,125,68,0.15);
+      text-align: center;
+    }
+    #contact p {
+      font-size: 1.1rem;
+      margin-bottom: 0.75rem;
+      color: #2a4d14;
+      font-weight: 600;
+    }
+    #contact a {
+      color: #3a7d44;
+      font-weight: 700;
+    }
+    /* Footer */
+    footer {
+      background-color: #3a7d44;
+      color: #e6f2d9;
+      text-align: center;
+      padding: 1rem 1rem;
+      font-size: 0.9rem;
+      user-select: none;
+    }
+    /* Responsive */
+    @media (max-width: 600px) {
+      .hero h2 {
+        font-size: 2rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+      header {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      nav ul {
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Greenovate</h1>
+    <nav aria-label="Primary navigation">
+      <ul>
+        <li><a href="#home" tabindex="0">Home</a></li>
+        <li><a href="#about" tabindex="0">About Us</a></li>
+        <li><a href="#services" tabindex="0">Services</a></li>
+        <li><a href="#contact" tabindex="0">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Home / Hero -->
+    <section id="home" class="hero" aria-label="Hero section with eco-smart living slogan">
+      <div class="hero-content">
+        <h2>Empowering Eco-Smart Living for a Sustainable Tomorrow</h2>
+        <p>Innovative green solutions and sustainable projects to protect our planet.</p>
+        <a href="#services" class="btn-primary" role="button">Explore Our Solutions</a>
+      </div>
+    </section>
+
+    <!-- About Us -->
+    <section id="about" aria-labelledby="about-title">
+      <h3 id="about-title">About Greenovate</h3>
+      <p>
+        At Greenovate, our mission is to inspire and implement eco-smart solutions that foster sustainability and innovation. We envision a world where green technology and conscious living go hand in hand to create a healthier planet for future generations. Our story began with a passion for environmental stewardship and a commitment to making a tangible difference through smart, sustainable projects.
+      </p>
+    </section>
+
+    <!-- Services/Products -->
+    <section id="services" aria-labelledby="services-title">
+      <h3 id="services-title">Our Eco-Smart Solutions</h3>
+      <div class="services-grid">
+        <article class="service-card" tabindex="0" aria-label="Solar Panel Installation">
+          <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=400&q=80" alt="Solar panels on a rooftop" />
+          <h4>Solar Panel Installation</h4>
+          <p>Harness the power of the sun with our efficient and affordable solar panel systems designed for homes and businesses.</p>
+        </article>
+        <article class="service-card" tabindex="0" aria-label="Smart Energy Management">
+          <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=400&q=80" alt="Smart energy management system interface" />
+          <h4>Smart Energy Management</h4>
+          <p>Optimize your energy consumption with our intelligent systems that reduce waste and lower your carbon footprint.</p>
+        </article>
+        <article class="service-card" tabindex="0" aria-label="Eco-Friendly Products">
+          <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=400&q=80" alt="Eco-friendly reusable products" />
+          <h4>Eco-Friendly Products</h4>
+          <p>Discover a range of sustainable products that help you live greener every day, from reusable goods to biodegradable materials.</p>
+        </article>
+        <article class="service-card" tabindex="0" aria-label="Sustainability Consulting">
+          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=400&q=80" alt="Consulting meeting with sustainability plans" />
+          <h4>Sustainability Consulting</h4>
+          <p>Partner with our experts to develop and implement sustainability strategies tailored to your organization’s needs.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Contact Us -->
+    <section id="contact" aria-labelledby="contact-title">
+      <h3 id="contact-title">Get in Touch</h3>
+      <p>📧 Email: <a href="mailto:karhaleyashpatil96k@gmail.com">karhaleyashpatil96k@gmail.com</a></p>
+      <p>📞 Phone: <a href="tel:+919322273695">9322273695</a></p>
+      <p>📍 Address: Chattrapati Chowk</p>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2024 Greenovate. All rights reserved.
+  </footer>
+</body>
+</html>
